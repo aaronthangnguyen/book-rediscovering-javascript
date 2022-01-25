@@ -16,7 +16,7 @@ Jan 12, 2022 - ...
 
 ## Part III - OO and Modular Code
 
-- [ ] 7. Working with Classes
+- [x] 7. Working with Classes 01/25
 - [ ] 8. Using Inheritance
 - [ ] 9. Using Modules
 
