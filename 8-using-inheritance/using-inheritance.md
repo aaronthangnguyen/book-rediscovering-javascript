@@ -14,3 +14,7 @@ JavaScript implements **prototypal** inheritance
 
 - Object chaining
 - `Reflect.getPrototypeOf`
+
+## Behavior of Get vs. Set
+
+- Gets search deep, but sets are always shallow
