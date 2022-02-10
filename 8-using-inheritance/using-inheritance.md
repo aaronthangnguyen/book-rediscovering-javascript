@@ -18,3 +18,8 @@ JavaScript implements **prototypal** inheritance
 ## Behavior of Get vs. Set
 
 - Gets search deep, but sets are always shallow
+
+## Inheriting from a Class
+
+- Extending a class
+- Overriding methods
