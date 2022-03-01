@@ -17,12 +17,6 @@ class Person {
   }
 }
 
-class AwesomePerson extends Person {
-  get fullName() {
-    return `Awesome ${super.fullName}`;
-  }
-}
-
 class ReputablePerson extends Person {
   constructor(firstName, lastName, rating) {
     super(firstName, lastName);
@@ -36,9 +30,21 @@ class ReputablePerson extends Person {
   }
 }
 
-const alan = new ReputablePerson("Alan", "Turing", 5);
-console.log(alan.toString());
-console.log(alan.fullName);
+const printPrototypeHierarchy = function (instance) {
+  if (instance !== null) {
+    console.log(instance);
+    printPrototypeHierarchy(Reflect.getPrototypeOf(instance));
+  }
+};
 
-const ball = new AwesomePerson("Lucille", "Ball");
-console.log(ball.fullName);
+const alan = new ReputablePerson("Alan", "Turing", 5);
+printPrototypeHierarchy(alan);
+
+class ComputerWiz {}
+
+Reflect.setPrototypeOf(Reflect.getPrototypeOf(alan), ComputerWiz.prototype);
+console.log("...after change of prototpye...");
+printPrototypeHierarchy(alan);
+
+const ada = new ReputablePerson("Ada", "Lovelace", 5);
+printPrototypeHierarchy(ada);
